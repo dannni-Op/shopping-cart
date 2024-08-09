@@ -1,10 +1,13 @@
 import { Navbar } from "../components/navbar";
+import { Products } from "../components/products";
 
 export function Home() {
   return (
     <>
-      <Navbar />
-      <h1>Home</h1>
+      <section className="h-screen">
+        <Navbar />
+        <Products />
+      </section>
     </>
   );
 }
