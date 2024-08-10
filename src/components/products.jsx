@@ -9,10 +9,10 @@ export function Products() {
 
   return (
     <>
-      <main className="w-full h-full bg-slate-50 p-8">
+      <main className="w-full h-full bg-slate-50 px-8 flex flex-col justify-between pt-8 pb-20">
         <SearchBar />
-        <section className="h-3/4 overflow-auto my-4 pb-1">
-          <div className="grid grid-cols-2 gap-6">
+        <section className="h-4/5 w-full my-4 pb-1 overflow-auto">
+          <div className="w-full grid grid-cols-2 gap-6">
             {products.map((e, i) => {
               return <Card data={e} key={i} />;
             })}
