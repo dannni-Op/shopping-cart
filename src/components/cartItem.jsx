@@ -2,7 +2,7 @@ export function CartItem({ data }) {
   return (
     <>
       <section className="flex justify-between w-full p-2">
-        <div className="flex items-center gap-4 basis-11/12">
+        <div className="flex items-center gap-4 basis-8/12">
           <div className="w-1/3 bg-red-200">
             <img className="w-full" src={data.picture} alt="" />
           </div>
