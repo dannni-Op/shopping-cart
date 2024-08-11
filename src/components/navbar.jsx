@@ -3,7 +3,7 @@ import { FaShoppingCart } from "react-icons/fa";
 import { IoMdSettings } from "react-icons/io";
 import { Link } from "react-router-dom";
 
-export function Navbar() {
+export function Navbar({ active }) {
   return (
     <>
       <nav className="w-full py-2 bg-blue-500 rounded-t-xl flex justify-evenly items-center text-white absolute bottom-0 font-medium">

@@ -3,6 +3,7 @@ import "./App.css";
 import { Home } from "./pages/home";
 import { Cart } from "./pages/cart";
 import { Settings } from "./pages/settings";
+import { CartProvider } from "./context/cart";
 
 function App() {
   const router = createBrowserRouter([
@@ -15,13 +16,15 @@ function App() {
       element: <Cart />,
     },
     {
-      path: "settings",
+      path: "/settings",
       element: <Settings />,
     },
   ]);
   return (
     <>
-      <RouterProvider router={router} />
+      <CartProvider>
+        <RouterProvider router={router} />
+      </CartProvider>
     </>
   );
 }
