@@ -23,19 +23,19 @@ export function Home() {
           <section className="w-full h-screen px-8 flex flex-col justify-between pt-8 pb-20">
             <SearchBar />
             <section className="h-4/5 w-full my-4 pb-1 overflow-auto">
-              <div className="w-full grid grid-cols-2 max-w-full gap-6">
+              <div className="w-full grid grid-cols-2 sm:grid-cols-3 max-w-full gap-6">
                 {products.map((e, i) => {
                   return <Card data={e} key={i} />;
                 })}
               </div>
             </section>
             <div className="text-slate-400 py-2 flex gap-2 border border-x-0">
-              <button className="items-center gap-2 flex h-full text-blue-500 text-md font-medium px-4 py-2 bg-slate-200 rounded-lg hover:bg-slate-200">
-                <GiFruitBowl className="text-xl" />
+              <button className="items-center gap-2 flex h-full text-blue-500 text-md sm:text-xl font-medium px-4 py-2 bg-slate-200 rounded-lg hover:bg-slate-200">
+                <GiFruitBowl className="text-xl sm:text-2xl" />
                 Fruits
               </button>
-              <button className="flex items-center gap-2 h-full text-blue-500 text-md font-medium px-4 py-2 rounded-lg bg-slate-200 hover:bg-slate-200">
-                <GiFruitBowl className="text-xl" />
+              <button className="flex items-center gap-2 h-full text-blue-500 text-md sm:text-xl font-medium px-4 py-2 rounded-lg bg-slate-200 hover:bg-slate-200">
+                <GiFruitBowl className="text-xl sm:text-2xl" />
                 Vegetables
               </button>
             </div>
