@@ -1,14 +1,12 @@
 import { useContext, useState } from "react";
-import { CartContext } from "../context/cart";
+import { CartContext } from "../contexts/cart";
 import { FaShoppingCart } from "react-icons/fa";
 import { CartItem } from "../components/cartItem";
-import DATA from "../data/data";
 import { motion } from "framer-motion";
 import { childVariants } from "../motions/motions";
 
 export function Cart() {
-  const [products, setProducts] = useState(DATA);
-  const { cart, setCart } = useContext(CartContext);
+  const { cartItems, addValue, reduceValue } = useContext(CartContext);
   return (
     <>
       <motion.div
@@ -24,17 +22,22 @@ export function Cart() {
           </div>
           <div className="h-3/4 w-full overflow-auto">
             <div className="divide-y">
-              {products.map((e, i) => {
+              {cartItems.map((e, i) => {
                 return <CartItem data={e} key={i} />;
               })}
             </div>
           </div>
           <div>
-            <div class="flex justify-between text-base sm:text-xl font-medium text-gray-900">
+            <div class="flex justify-between text-base sm:text-lg font-medium text-gray-900">
               <p>Subtotal</p>
-              <p>$262.00</p>
+              <p>
+                {cartItems.length > 0 &&
+                  cartItems.reduce((acc, curr) => {
+                    return curr.quantity * curr.price + acc;
+                  }, 0)}
+              </p>
             </div>
-            <p class="mt-0.5 text-sm sm:text-xl text-gray-500">
+            <p class="mt-0.5 text-sm sm:text-lg text-gray-500">
               Shipping and calculated at checkout.
             </p>
             <div class="mt-6">

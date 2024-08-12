@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 export function Navbar({ active }) {
   return (
     <>
-      <nav className="w-full lg:w-20 lg:h-screen lg:py-0 py-2 md:py-3 bg-blue-500 rounded-t-xl lg:rounded-l-none lg:rounded-r-xl flex lg:flex-col justify-evenly items-center text-white absolute bottom-0 font-medium ">
+      <div className="w-full lg:w-20 lg:py-0 py-2 md:py-3 bg-blue-500 rounded-t-xl lg:rounded-l-none lg:rounded-r-xl flex lg:flex-col justify-evenly items-center text-white absolute bottom-0 lg:top-0 lg:my-8 font-medium">
         <Link
           to="/"
           className="text-md sm:text-lg hover:bg-white hover:text-blue-500 py-2 px-3 rounded-lg flex items-center gap-2 lg:-rotate-90"
@@ -28,7 +28,7 @@ export function Navbar({ active }) {
           <IoMdSettings className="sm:text-lg text-md" />
           Settings
         </Link>
-      </nav>
+      </div>
     </>
   );
 }

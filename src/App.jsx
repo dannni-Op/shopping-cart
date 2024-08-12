@@ -8,7 +8,7 @@ import "./App.css";
 import { Home } from "./pages/home";
 import { Cart } from "./pages/cart";
 import { Settings } from "./pages/settings";
-import { CartProvider } from "./context/cart";
+import { CartProvider } from "./contexts/cart";
 import { AnimatePresence } from "framer-motion";
 import { Navbar } from "./components/navbar";
 
