@@ -11,7 +11,7 @@ export function Settings() {
         exit="exit"
         variants={childVariants}
       >
-        <section className="pg-slate-50 w-full h-screen flex flex-col justify-center items-center gap-4 pb-8">
+        <section className="pg-slate-50 w-full h-screen flex flex-col justify-center items-center gap-4 pb-20 md:pb-24 lg:pb-8 lg:ps-32">
           <FaCode className="text-9xl text-blue-500" />
           <h2 className="text-blue-500 font-extrabold text-4xl sm:text-5xl">
             We Are Coding
