@@ -7,6 +7,11 @@ import { childVariants } from "../motions/motions";
 
 export function Cart() {
   const { cartItems, addValue, reduceValue } = useContext(CartContext);
+
+  const total = cartItems.reduce((acc, curr) => {
+    return curr.quantity * curr.price + acc;
+  }, 0);
+
   return (
     <>
       <motion.div
@@ -30,12 +35,7 @@ export function Cart() {
           <div>
             <div class="flex justify-between text-base sm:text-lg font-medium text-gray-900">
               <p>Subtotal</p>
-              <p>
-                {cartItems.length > 0 &&
-                  cartItems.reduce((acc, curr) => {
-                    return curr.quantity * curr.price + acc;
-                  }, 0)}
-              </p>
+              <p>{cartItems.length > 0 && "$" + total}</p>
             </div>
             <p class="mt-0.5 text-sm sm:text-lg text-gray-500">
               Shipping and calculated at checkout.
