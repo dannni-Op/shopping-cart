@@ -1,9 +1,26 @@
 import { useContext } from "react";
 import { IoMdAddCircle } from "react-icons/io";
 import { CartContext } from "../contexts/cart";
+import { toast } from "react-toastify";
 
 export function Card({ data }) {
   const { addValue } = useContext(CartContext);
+
+  const notifyAddedToCart = (item) =>
+    toast.success(`${item.name} added to cart!`, {
+      position: "top-center",
+      autoClose: 2000,
+      hideProgressBar: true,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      theme: "colored",
+      style: {
+        backgroundColor: "#fff",
+        color: "#000",
+      },
+    });
+
   return (
     <>
       <section className="w-fit shadow rounded-xl overflow-hidden">
@@ -21,6 +38,7 @@ export function Card({ data }) {
             <button
               onClick={() => {
                 addValue(data);
+                notifyAddedToCart(data);
               }}
             >
               <IoMdAddCircle className="text-3xl text-blue-500 hover:text-blue-600" />

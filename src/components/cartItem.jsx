@@ -1,8 +1,24 @@
 import { useContext } from "react";
 import { CartContext } from "../contexts/cart";
+import { toast } from "react-toastify";
 
 export function CartItem({ data }) {
   const { addValue, reduceValue } = useContext(CartContext);
+  const notifyRemovedFromCart = (item) =>
+    toast.error(`${item.name} removed from cart!`, {
+      position: "top-center",
+      autoClose: 2000,
+      hideProgressBar: true,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      theme: "colored",
+      style: {
+        backgroundColor: "#000",
+        color: "#fff",
+      },
+    });
+
   return (
     <>
       <section className="flex justify-between w-full p-2">
@@ -21,6 +37,7 @@ export function CartItem({ data }) {
             onClick={() => {
               data.quantity = 0;
               reduceValue(data);
+              notifyRemovedFromCart(data);
             }}
           >
             x

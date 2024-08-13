@@ -11,6 +11,8 @@ import { Settings } from "./pages/settings";
 import { CartProvider } from "./contexts/cart";
 import { AnimatePresence } from "framer-motion";
 import { Navbar } from "./components/navbar";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function App() {
   const router = createBrowserRouter([
@@ -33,6 +35,7 @@ function App() {
         <CartProvider>
           <AnimatePresence>
             <Navbar />
+            <ToastContainer />
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/carts" element={<Cart />} />
