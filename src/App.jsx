@@ -13,6 +13,7 @@ import { AnimatePresence } from "framer-motion";
 import { Navbar } from "./components/navbar";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { FilterProvider } from "./contexts/filter";
 
 function App() {
   const router = createBrowserRouter([
@@ -32,17 +33,19 @@ function App() {
   return (
     <>
       <BrowserRouter>
-        <CartProvider>
-          <AnimatePresence>
+        <FilterProvider>
+          <CartProvider>
             <Navbar />
             <ToastContainer />
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/carts" element={<Cart />} />
-              <Route path="/settings" element={<Settings />} />
-            </Routes>
-          </AnimatePresence>
-        </CartProvider>
+            <AnimatePresence>
+              <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/carts" element={<Cart />} />
+                <Route path="/settings" element={<Settings />} />
+              </Routes>
+            </AnimatePresence>
+          </CartProvider>
+        </FilterProvider>
       </BrowserRouter>
     </>
   );

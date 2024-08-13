@@ -47,7 +47,7 @@ export function CartItem({ data }) {
               className="border px-2 text-xl sm:text-2xl"
               onClick={() => {
                 reduceValue(data);
-                if( data.quantity === 1) notifyRemovedFromCart(data);
+                if (data.quantity === 1) notifyRemovedFromCart(data);
               }}
             >
               -
@@ -57,7 +57,7 @@ export function CartItem({ data }) {
               type="text"
               inputMode="numeric"
               value={data.quantity}
-              disabled="true"
+              disabled={true}
             />
             <button
               className="border px-2 text-xl sm:text-2xl"

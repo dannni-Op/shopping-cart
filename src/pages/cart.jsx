@@ -34,8 +34,8 @@ export function Cart() {
           {cartItems.length > 0 ? (
             <div className="h-3/4 w-full overflow-auto">
               <div className="divide-y">
-                {cartItems.map((e, i) => {
-                  return <CartItem data={e} key={i} />;
+                {cartItems.map((e) => {
+                  return <CartItem data={e} key={e.id} />;
                 })}
               </div>
             </div>
@@ -52,15 +52,15 @@ export function Cart() {
           )}
           {cartItems.length > 0 && (
             <div>
-              <div class="flex justify-between text-base sm:text-lg font-medium text-gray-900">
+              <div className="flex justify-between text-base sm:text-lg font-medium text-gray-900">
                 <p>Subtotal</p>
                 <p>{cartItems.length > 0 && "$" + total}</p>
               </div>
-              <p class="mt-0.5 text-sm sm:text-lg text-gray-500">
+              <p className="mt-0.5 text-sm sm:text-lg text-gray-500">
                 Shipping and calculated at checkout.
               </p>
-              <div class="mt-6">
-                <button class="text-base sm:text-lg w-full flex items-center justify-center rounded-md border border-transparent bg-blue-500 px-6 py-3 text-base font-bold text-white shadow-sm hover:bg-blue-600">
+              <div className="mt-6">
+                <button className="text-base sm:text-lg w-full flex items-center justify-center rounded-md border border-transparent bg-blue-500 px-6 py-3 text-base font-bold text-white shadow-sm hover:bg-blue-600">
                   Checkout
                 </button>
               </div>

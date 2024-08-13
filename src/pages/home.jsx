@@ -6,14 +6,19 @@ import { Card } from "../components/card";
 import { GiFruitBowl } from "react-icons/gi";
 import { childVariants } from "../motions/motions";
 import { CartContext } from "../contexts/cart";
+import { FilterContext } from "../contexts/filter";
 
 export function Home() {
-  const [products, setProducts] = useState(DATA);
+  const { data, search, searchItems } = useContext(FilterContext);
   const { cartItems } = useContext(CartContext);
 
   useEffect(() => {
     localStorage.setItem("cartItems", JSON.stringify(cartItems));
   }, [cartItems]);
+
+  useEffect(() => {
+    searchItems();
+  }, [search]);
 
   return (
     <>
@@ -30,8 +35,8 @@ export function Home() {
             <SearchBar />
             <section className="h-4/5 w-full my-4 pb-1 overflow-auto">
               <div className="w-full grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 max-w-full gap-6">
-                {products.map((e, i) => {
-                  return <Card data={e} key={i} />;
+                {data.map((e) => {
+                  return <Card data={e} key={e.id} />;
                 })}
               </div>
             </section>
