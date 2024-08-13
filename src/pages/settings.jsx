@@ -11,12 +11,12 @@ export function Settings() {
         exit="exit"
         variants={childVariants}
       >
-        <section className="pg-slate-50 w-full h-screen flex flex-col justify-center items-center gap-4 pb-20 md:pb-24 lg:pb-8 lg:ps-32">
+        <section className="pg-slate-50 w-full h-screen flex flex-col justify-center items-center gap-2 pb-20 md:pb-24 lg:pb-8 lg:ps-32">
           <FaCode className="text-9xl text-blue-500" />
-          <h2 className="text-blue-500 font-extrabold text-4xl sm:text-5xl">
+          <h2 className="text-blue-500 font-extrabold sm:text-4xl text-2xl">
             We Are Coding
           </h2>
-          <p className="text-slate-400 font-medium text-base sm:text-2xl">
+          <p className="text-slate-400 font-medium text-base sm:text-lg">
             Coming Soon!
           </p>
         </section>
