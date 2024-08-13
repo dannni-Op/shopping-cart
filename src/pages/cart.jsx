@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { CartContext } from "../contexts/cart";
 import { FaShoppingCart } from "react-icons/fa";
 import { CartItem } from "../components/cartItem";
@@ -7,11 +7,16 @@ import { childVariants } from "../motions/motions";
 import { VscEmptyWindow } from "react-icons/vsc";
 
 export function Cart() {
-  const { cartItems, addValue, reduceValue } = useContext(CartContext);
+  const { cartItems, setCartItems, addValue, reduceValue } =
+    useContext(CartContext);
 
   const total = cartItems.reduce((acc, curr) => {
     return curr.quantity * curr.price + acc;
   }, 0);
+
+  useEffect(() => {
+    localStorage.setItem("cartItems", JSON.stringify(cartItems));
+  }, [cartItems]);
 
   return (
     <>

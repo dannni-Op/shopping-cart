@@ -1,13 +1,19 @@
 import { motion } from "framer-motion";
-import { useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { SearchBar } from "../components/searchbar";
 import DATA from "../data/data";
 import { Card } from "../components/card";
 import { GiFruitBowl } from "react-icons/gi";
 import { childVariants } from "../motions/motions";
+import { CartContext } from "../contexts/cart";
 
 export function Home() {
   const [products, setProducts] = useState(DATA);
+  const { cartItems } = useContext(CartContext);
+
+  useEffect(() => {
+    localStorage.setItem("cartItems", JSON.stringify(cartItems));
+  }, [cartItems]);
 
   return (
     <>

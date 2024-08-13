@@ -2,7 +2,11 @@ import { createContext, useState } from "react";
 
 export const CartContext = createContext(null);
 export const CartProvider = ({ children }) => {
-  const [cartItems, setCartItems] = useState([]);
+  const [cartItems, setCartItems] = useState(
+    localStorage.getItem("cartItems")
+      ? JSON.parse(localStorage.getItem("cartItems"))
+      : []
+  );
 
   function addValue(item) {
     const isItemInCart = cartItems.find((e) => e.id == item.id);
@@ -37,6 +41,7 @@ export const CartProvider = ({ children }) => {
 
   const data = {
     cartItems,
+    setCartItems,
     addValue,
     reduceValue,
   };

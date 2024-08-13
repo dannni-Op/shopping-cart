@@ -45,7 +45,10 @@ export function CartItem({ data }) {
           <div className="flex">
             <button
               className="border px-2 text-xl sm:text-2xl"
-              onClick={() => reduceValue(data)}
+              onClick={() => {
+                reduceValue(data);
+                if( data.quantity === 1) notifyRemovedFromCart(data);
+              }}
             >
               -
             </button>
