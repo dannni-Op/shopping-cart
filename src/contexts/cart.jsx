@@ -39,11 +39,25 @@ export const CartProvider = ({ children }) => {
     }
   }
 
+  function changeValue(item) {
+    const isItemInCart = cartItems.find((e) => e.id == item.id);
+    if (isItemInCart) {
+      setCartItems(
+        cartItems.map((e) => {
+          const result =
+            e.id == item.id ? { ...e, quantity: item.quantity } : e;
+          return result;
+        })
+      );
+    }
+  }
+
   const data = {
     cartItems,
     setCartItems,
     addValue,
     reduceValue,
+    changeValue,
   };
 
   return (

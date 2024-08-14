@@ -3,7 +3,7 @@ import { CartContext } from "../contexts/cart";
 import { toast } from "react-toastify";
 
 export function CartItem({ data }) {
-  const { addValue, reduceValue } = useContext(CartContext);
+  const { addValue, reduceValue, changeValue } = useContext(CartContext);
   const notifyRemovedFromCart = (item) =>
     toast.error(`${item.name} removed from cart!`, {
       position: "top-center",
@@ -31,7 +31,7 @@ export function CartItem({ data }) {
             <p>${data.price}</p>
           </div>
         </div>
-        <div className="flex flex-col justify-between gap-8 lg:gap-20 basis-1/3">
+        <div className="flex flex-col justify-between gap-8 lg:gap-20 basis-2/3">
           <button
             className="self-end w-fit leading-none text-xl sm:text-2xl"
             onClick={() => {
@@ -42,26 +42,37 @@ export function CartItem({ data }) {
           >
             x
           </button>
-          <div className="flex">
+          <div className="flex justify-end">
             <button
-              className="border px-2 text-xl sm:text-2xl"
-              onClick={() => {
+              className="border px-2 text-xl sm:text-2xl rounded-l-lg"
+              onClick={(e) => {
                 reduceValue(data);
                 if (data.quantity === 1) notifyRemovedFromCart(data);
+                e.target.parentNode.childNodes[1].value = data.quantity - 1;
               }}
             >
               -
             </button>
             <input
-              className="w-full border text-base sm:text-xl"
+              className="w-4/12 md:w-2/12 border text-base sm:text-xl text-center"
               type="text"
-              inputMode="numeric"
-              value={data.quantity}
-              disabled={true}
+              defaultValue={data.quantity}
+              onChange={(e) => {
+                e.target.value = e.target.value.replace(/[^\d]/g, "");
+                data.quantity = Number(e.target.value);
+                if (data.quantity === 0) {
+                  e.target.value = 1;
+                  data.quantity = 1;
+                }
+                changeValue(data);
+              }}
             />
             <button
-              className="border px-2 text-xl sm:text-2xl"
-              onClick={() => addValue(data)}
+              className="border px-2 text-xl sm:text-2xl rounded-r-lg"
+              onClick={(e) => {
+                addValue(data);
+                e.target.parentNode.childNodes[1].value = data.quantity + 1;
+              }}
             >
               +
             </button>
