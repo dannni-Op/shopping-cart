@@ -55,7 +55,7 @@ export function Home() {
             </section>
             <div className="text-slate-400 py-2 flex gap-2 border border-x-0">
               <button
-                className={`items-center gap-2 flex h-full text-blue-500 text-sm sm:text-lg font-medium px-4 py-2 rounded-lg hover:bg-slate-200 ${
+                className={`text-sm md:text-base lg:text-lg xl:text-xl items-center gap-2 flex h-full text-blue-500 font-medium px-4 py-2 rounded-lg hover:bg-slate-200 ${
                   filter.fruits && "bg-slate-200"
                 }`}
                 onClick={() => {
@@ -65,7 +65,7 @@ export function Home() {
                   });
                 }}
               >
-                <GiFruitBowl className="text-lg sm:text-xl" />
+                <GiFruitBowl className="text-lg md:text-xl lg:text-2xl xl:text-3xl" />
                 Fruits
               </button>
               <button
@@ -75,11 +75,11 @@ export function Home() {
                     vegetables: !filter.vegetables,
                   });
                 }}
-                className={`flex items-center gap-2 h-full text-blue-500 text-sm sm:text-lg font-medium px-4 py-2 rounded-lg hover:bg-slate-200 ${
+                className={`text-sm md:text-base lg:text-lg xl:text-xl flex items-center gap-2 h-full text-blue-500 font-medium px-4 py-2 rounded-lg hover:bg-slate-200 ${
                   filter.vegetables && "bg-slate-200"
                 }`}
               >
-                <GiFruitBowl className="text-lg sm:text-xl" />
+                <GiFruitBowl className="text-lg md:text-xl lg:text-2xl xl:text-3xl" />
                 Vegetables
               </button>
             </div>

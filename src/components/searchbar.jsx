@@ -11,7 +11,7 @@ export function SearchBar() {
         <div className="w-full relative">
           <input
             type="search"
-            className="text-base p-4 w-full rounded-xl shadow ps-14"
+            className="text-sm md:text-base lg:text-lg xl:text-xl p-4 w-full rounded-xl shadow ps-14"
             placeholder="Enter product name..."
             value={search}
             onChange={(e) => {
@@ -19,7 +19,7 @@ export function SearchBar() {
               setSearch(e.target.value);
             }}
           />
-          <FaSearch className="text-lg sm:text-xl text-slate-300 absolute top-1/3 left-6" />
+          <FaSearch className="text-lg md:text-xl text-slate-300 absolute top-1/3 left-6" />
         </div>
       </section>
     </>
