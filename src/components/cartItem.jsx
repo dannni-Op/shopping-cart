@@ -26,14 +26,14 @@ export function CartItem({ data }) {
           <div className="w-1/3 bg-red-200 max-w-[100px]">
             <img className="w-full" src={data.picture} alt="" />
           </div>
-          <div className="text-base sm:text-lg">
+          <div className="text-sm md:text-base lg:text-lg">
             <h1>{data.name}</h1>
             <p>${data.price}</p>
           </div>
         </div>
         <div className="flex flex-col justify-between gap-8 lg:gap-20 basis-2/3">
           <button
-            className="self-end w-fit leading-none text-xl sm:text-2xl"
+            className="self-end w-fit leading-none text-base md:text-lg lg:text-xl"
             onClick={() => {
               data.quantity = 0;
               reduceValue(data);
@@ -44,7 +44,7 @@ export function CartItem({ data }) {
           </button>
           <div className="flex justify-end">
             <button
-              className="border px-2 text-xl sm:text-2xl rounded-l-lg"
+              className="border px-2 text-base md:text-lg lg:text-xl rounded-l-lg"
               onClick={(e) => {
                 reduceValue(data);
                 if (data.quantity === 1) notifyRemovedFromCart(data);
@@ -54,7 +54,7 @@ export function CartItem({ data }) {
               -
             </button>
             <input
-              className="w-4/12 md:w-2/12 border text-base sm:text-xl text-center"
+              className="w-4/12 md:w-2/12 border text-base md:text-lg lg:text-xl text-center"
               type="text"
               defaultValue={data.quantity}
               onChange={(e) => {
@@ -68,7 +68,7 @@ export function CartItem({ data }) {
               }}
             />
             <button
-              className="border px-2 text-xl sm:text-2xl rounded-r-lg"
+              className="border px-2 text-base md:text-lg lg:text-xl rounded-r-lg"
               onClick={(e) => {
                 addValue(data);
                 e.target.parentNode.childNodes[1].value = data.quantity + 1;
