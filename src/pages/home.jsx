@@ -43,11 +43,11 @@ export function Home() {
                 </div>
               ) : (
                 <section className="flex flex-col items-center gap-2 h-full justify-center">
-                  <FaSearch className="text-8xl sm:text-9xl text-blue-500 mb-3" />
-                  <h2 className="text-blue-500 font-extrabold text-xl sm:text-3xl md:text-4xl">
+                  <FaSearch className="text-6xl md:text-7xl lg:text-8xl text-blue-500 mb-3" />
+                  <h2 className="text-lg md:text-2xl md:text-4xl text-blue-500 font-extrabold ">
                     Oops! Product Not Found
                   </h2>
-                  <p className="text-slate-400 font-medium text-xs sm:text-base md:text-md ">
+                  <p className="text-xs md:text-base md:text-lg text-slate-400 font-medium ">
                     Change search keywoard or add categories
                   </p>
                 </section>
@@ -55,7 +55,7 @@ export function Home() {
             </section>
             <div className="text-slate-400 py-2 flex gap-2 border border-x-0">
               <button
-                className={`text-sm md:text-base lg:text-lg xl:text-xl items-center gap-2 flex h-full text-blue-500 font-medium px-4 py-2 rounded-lg hover:bg-slate-200 ${
+                className={`text-sm md:text-base lg:text-md xl:text-lg items-center gap-2 flex h-full text-blue-500 font-medium px-4 py-2 rounded-lg hover:bg-slate-200 ${
                   filter.fruits && "bg-slate-200"
                 }`}
                 onClick={() => {
@@ -65,7 +65,7 @@ export function Home() {
                   });
                 }}
               >
-                <GiFruitBowl className="text-lg md:text-xl lg:text-2xl xl:text-3xl" />
+                <GiFruitBowl className="text-lg md:text-xl lg:text-xl xl:text-2xl" />
                 Fruits
               </button>
               <button
@@ -75,11 +75,11 @@ export function Home() {
                     vegetables: !filter.vegetables,
                   });
                 }}
-                className={`text-sm md:text-base lg:text-lg xl:text-xl flex items-center gap-2 h-full text-blue-500 font-medium px-4 py-2 rounded-lg hover:bg-slate-200 ${
+                className={`text-sm md:text-base lg:text-md xl:text-lg flex items-center gap-2 h-full text-blue-500 font-medium px-4 py-2 rounded-lg hover:bg-slate-200 ${
                   filter.vegetables && "bg-slate-200"
                 }`}
               >
-                <GiFruitBowl className="text-lg md:text-xl lg:text-2xl xl:text-3xl" />
+                <GiFruitBowl className="text-lg md:text-xl lg:text-xl xl:text-2xl" />
                 Vegetables
               </button>
             </div>
