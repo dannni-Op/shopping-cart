@@ -36,7 +36,7 @@ export function Home() {
             <SearchBar />
             <section className="h-4/5 w-full my-4 pb-1 overflow-auto">
               {data.length > 0 ? (
-                <div className="w-full grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 max-w-full gap-6">
+                <div className="w-full grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 max-w-full gap-6 justify-items-center items-center">
                   {data.map((e) => {
                     return <Card data={e} key={e.id} />;
                   })}
@@ -44,10 +44,10 @@ export function Home() {
               ) : (
                 <section className="flex flex-col items-center gap-2 h-full justify-center">
                   <FaSearch className="text-6xl md:text-7xl lg:text-8xl text-blue-500 mb-3" />
-                  <h2 className="text-lg md:text-2xl md:text-4xl text-blue-500 font-extrabold ">
+                  <h2 className="text-lg md:text-2xl md:text-3xl text-blue-500 font-extrabold ">
                     Oops! Product Not Found
                   </h2>
-                  <p className="text-xs md:text-base md:text-lg text-slate-400 font-medium ">
+                  <p className="text-xs md:text-base lg:text-md text-slate-400 font-medium ">
                     Change search keywoard or add categories
                   </p>
                 </section>

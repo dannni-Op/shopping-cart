@@ -44,7 +44,7 @@ export function Cart() {
           ) : (
             <section className="flex flex-col items-center gap-4 h-full justify-center">
               <VscEmptyWindow className="text-7xl md:text-8xl lg:text-9xl text-blue-500" />
-              <h2 className="text-lg md:text-xl xl:text-2xl text-blue-500 font-extrabold">
+              <h2 className="text-xl md:text-2xl xl:text-3xl text-blue-500 font-extrabold">
                 Your cart is empty
               </h2>
               <p className="text-xs md:text-sm lg:text-base xl:text-md text-slate-400 font-medium">
