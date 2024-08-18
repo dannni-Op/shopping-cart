@@ -26,7 +26,7 @@ export function Cart() {
         variants={childVariants}
         exit="exit"
       >
-        <section className="w-full h-screen px-8 pt-8 text-slate-800 pb-2 lg:pb-8 lg:ps-32 flex justify-between flex-col gap-8">
+        <section className="relative w-full h-screen px-8 pt-8 text-slate-800 pb-2 lg:pb-8 lg:ps-32 flex justify-between flex-col gap-8">
           <div className="flex items-center justify-between">
             <h1 className="font-bold text-xl md:text-2xl lg:text-3xl">
               Shopping Cart
