@@ -32,7 +32,7 @@ export function Home() {
           variants={childVariants}
           layout={false}
         >
-          <section className="w-full h-screen px-8 flex flex-col justify-between pt-8 pb-20 md:pb-24 lg:pb-8 lg:ps-32">
+          <section className="w-full h-screen px-8 flex flex-col justify-between pt-8 pb-2 lg:pb-8 lg:ps-32">
             <SearchBar />
             <section className="h-4/5 w-full my-4 pb-1 overflow-auto">
               {data.length > 0 ? (

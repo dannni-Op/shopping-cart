@@ -35,7 +35,6 @@ function App() {
       <BrowserRouter>
         <FilterProvider>
           <CartProvider>
-            <Navbar />
             <ToastContainer />
             <AnimatePresence>
               <Routes>
@@ -43,6 +42,7 @@ function App() {
                 <Route path="/carts" element={<Cart />} />
                 <Route path="/settings" element={<Settings />} />
               </Routes>
+              <Navbar />
             </AnimatePresence>
           </CartProvider>
         </FilterProvider>
